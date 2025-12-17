@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Flashcards Betis – Respuesta escrita</title>
+<style>
+:root {
+--verde-betis: #0b8f3b;
+--verde-oscuro: #066027;
+--dorado: #f0c75e;
+--blanco: #ffffff;
+--gris-fondo: #0b1a12;
+--gris-claro: #d9e2dd;
+--sombra: 0 18px 35px rgba(0, 0, 0, 0.45);
+--radio: 18px;
+--duracion: 0.3s;
+}
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: radial-gradient(circle at top, #124528 0, #020a04 55%, #000000 100%);
+color: var(--gris-claro);
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 32px 16px;
+}
+h1 {
+text-align: center;
+margin-bottom: 8px;
+font-size: 1.8rem;
+letter-spacing: 0.06em;
+color: var(--dorado);
+text-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+p.subtitulo {
+margin-bottom: 24px;
+color: #c6d2cc;
+font-size: 0.95rem;
+text-align: center;
+}
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 18px;
+width: 100%;
+max-width: 900px;
+}
+.card {
+background: linear-gradient(145deg, rgba(2, 20, 9, 0.98), rgba(3, 36, 15, 0.98));
+border-radius: var(--radio);
+border: 1px solid rgba(240, 199, 94, 0.35);
+box-shadow: var(--sombra);
+padding: 18px 16px 20px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+justify-content: space-between;
+}
+.enunciado {
+font-weight: 600;
+font-size: 0.98rem;
+margin-bottom: 4px;
+}
+.input-respuesta {
+padding: 8px 10px;
+border-radius: 10px;
+border: 1px solid rgba(217, 226, 221, 0.3);
+background: rgba(4, 20, 10, 0.9);
+color: var(--gris-claro);
+outline: none;
+font-size: 0.95rem;
+}
+.input-respuesta:focus {
+border-color: var(--dorado);
+box-shadow: 0 0 0 1px rgba(240, 199, 94, 0.5);
+}
+.btn-comprobar {
+align-self: flex-start;
+margin-top: 2px;
+padding: 6px 12px;
+border-radius: 999px;
+border: none;
+cursor: pointer;
+background: var(--verde-betis);
+color: var(--blanco);
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+transition: background var(--duracion) ease, transform var(--duracion) ease;
+}
+.btn-comprobar:hover {
+background: var(--verde-oscuro);
+transform: translateY(-1px);
+}
+.feedback {
+font-size: 0.85rem;
+min-height: 1.2em;
+}
+.feedback.correcto {
+color: #7fdc7f;
+}
+.feedback.incorrecto {
+color: #ff9b7f;
+}
+</style>
+</head>
+<body>
+<h1>Quiz Betis – Respuesta escrita</h1>
+<p class="subtitulo">Escribe tu respuesta y pulsa “Comprobar”. No hace falta que sea perfecta, es para aprender.</p>
+
+<div class="card" data-respuesta-correcta="1907">
+<div class="enunciado">¿En qué año se fundó el Real Betis Balompié?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe un año">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Sevilla">
+<div class="enunciado">¿En qué ciudad se fundó el Real Betis Balompié?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe la ciudad">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Sevilla Balompié">
+<div class="enunciado">¿Cuál fue el primer nombre del club antes de llamarse Real Betis Balompié?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe el nombre antiguo">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Betis">
+<div class="enunciado">¿Qué significa la palabra “Betis” en relación con el nombre del club?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe la explicación breve">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="1934-35">
+<div class="enunciado">¿En qué temporada ganó el Betis su primera Liga?</div>
+<input class="input-respuesta" type="text" placeholder="Ejemplo: 1934-35">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="1977, 2005 y 2022">
+<div class="enunciado">¿En qué años ganó el Betis la Copa del Rey?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe los años separados por comas">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Heliópolis">
+<div class="enunciado">¿Cómo se llamaba históricamente el estadio del Betis antes de llamarse Benito Villamarín?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe el nombre principal">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="1929">
+<div class="enunciado">¿En qué año se inauguró el estadio en su ubicación actual?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe un año">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="verde y blanco">
+<div class="enunciado">¿Qué colores identifican al Real Betis Balompié?</div>
+<input class="input-respuesta" type="text" placeholder="Ejemplo: verde y blanco">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Joaquín">
+<div class="enunciado">Nombra al gran capitán bético, muy querido por su carisma y sentido del humor.</div>
+<input class="input-respuesta" type="text" placeholder="Escribe el nombre de pila">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="17">
+<div class="enunciado">¿Qué dorsal ha sido especialmente icónico en la historia reciente del Betis por Joaquín?</div>
+<input class="input-respuesta" type="text" placeholder="Escribe un número de dorsal">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Manuel Pellegrini">
+<div class="enunciado">¿Qué entrenador chileno llevó al Betis a ganar la Copa del Rey de 2022?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre y apellido">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Sevilla FC">
+<div class="enunciado">¿Cuál es el gran rival del Betis en el derbi sevillano?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre del club rival">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="béticos">
+<div class="enunciado">¿Cómo se conoce popularmente a la afición del Real Betis Balompié?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre de la afición">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="manque pierda">
+<div class="enunciado">Completa la frase: “¡Viva el Betis ...!”</div>
+<input class="input-respuesta" type="text" placeholder="Completa la expresión">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Europa League">
+<div class="enunciado">¿Qué competición europea ha disputado con frecuencia el Betis en los últimos años?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre de la competición">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Denílson">
+<div class="enunciado">¿Qué extremo brasileño fichó el Betis a finales de los 90 por una cifra récord en su época?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre del jugador">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Esnaola">
+<div class="enunciado">¿Qué mítico portero del Betis es recordado por su actuación en la final de Copa de 1977?</div>
+<input class="input-respuesta" type="text" placeholder="Apellidos del portero">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="Copa del Rey de 2005">
+<div class="enunciado">¿Qué título ganó el Betis en la final disputada en el Vicente Calderón en 2005?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre del título y año">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+
+<div class="card" data-respuesta-correcta="eurobetis">
+<div class="enunciado">¿Cómo se llama popularmente al Betis cuando se clasifica y compite bien en Europa?</div>
+<input class="input-respuesta" type="text" placeholder="Nombre popular">
+<button class="btn-comprobar">Comprobar</button>
+<div class="feedback"></div>
+</div>
+<script>
+function normalizarTexto(texto) {
+return texto
+.toLowerCase()
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g, "")
+.trim();
+}
+
+document.querySelectorAll('.card').forEach(card => {
+const input = card.querySelector('.input-respuesta');
+const boton = card.querySelector('.btn-comprobar');
+const feedback = card.querySelector('.feedback');
+const correcta = normalizarTexto(card.dataset.respuestaCorrecta);
+
+function comprobar() {
+const usuario = normalizarTexto(input.value);
+if (!usuario) {
+feedback.textContent = "Escribe algo antes de comprobar 😉";
+feedback.className = "feedback incorrecto";
+return;
+}
+
+if (usuario === correcta) {
+feedback.textContent = "¡Correcto! ✅";
+feedback.className = "feedback correcto";
+} else {
+feedback.textContent = "No es del todo correcto. Respuesta esperada: " + card.dataset.respuestaCorrecta;
+feedback.className = "feedback incorrecto";
+}
+}
+
+boton.addEventListener('click', comprobar);
+input.addEventListener('keydown', (e) => {
+if (e.key === 'Enter') comprobar();
+});
+});
+</script>
+</body>
+</html>
